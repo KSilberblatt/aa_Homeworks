@@ -23,7 +23,7 @@ describe Dessert do
     end
 
     it "raises an argument error when given a non-integer quantity" do
-      expect { Dessert.new("Banana Split", 3, chef) }.to raise_error(ArgumentError)
+      expect { Dessert.new("Banana Split", "5", chef) }.to raise_error(ArgumentError)
     end
   end
 
@@ -50,10 +50,11 @@ describe Dessert do
 
 
   describe "#eat" do
-      it "subtracts an amount from the quantity"
+    it "subtracts an amount from the quantity" do
       dessert.eat(2)
       expect(dessert.quantity).to eq(1)
     end
+  end
 
     it "raises an error if the amount is greater than the quantity" do
     expect { dessert.eat(5) }. to raise_error("not enough left!")
@@ -61,10 +62,10 @@ describe Dessert do
   end
 
   describe "#serve" do
-    it "contains the titleized version of the chef's name"
-    allow(chef).to receive(:titleize).and_return("Chef Kevin the Great Baker")
-    expect(dessert.serve).to eq
-    ("Chef Kevin the Great Baker has made 3 Banana Splits!")
+    it "contains the titleized version of the chef's name" do
+      allow(chef).to receive(:titleize).and_return("Chef Kevin the Great Baker")
+      expect(dessert.serve).to eq("Chef Kevin the Great Baker has made 3 Banana Splits!")
+    end
   end
 
   describe "#make_more" do
