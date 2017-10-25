@@ -33,9 +33,44 @@ with a class attribute containing 'col-' */
   width: 12.5%;
 }
 
-/* CSS Day 6 media queries */
+.hamburger-helper {
+  display: none;
+}
+
+
 @media all and (max-width: 900px) {
   [class*='col-'] {
     width: 100%;
   }
-}
+
+  .hamburger-helper {
+    display: block;
+  }
+  .hamburger-helper > li {
+    background: url(https://raw.githubusercontent.com/appacademy/curriculum/master/html-css/assets/images/hamburger.png?token=ABvJPdbjALnbXUO2MIwQMk3YWTLLKVbrks5Z-TIOwA%3D%3D);
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+  }
+  .hamburger-helper ul {
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: black 5px 5px 10px;
+  }
+
+  .hamburger-helper:hover ul {
+    display: flex;
+    background: ghostwhite;
+  }
+
+  .hamburger-helper ul li:hover a {
+    text-decoration: underline;
+  }
+};
