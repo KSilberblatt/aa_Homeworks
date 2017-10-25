@@ -1,21 +1,25 @@
 /* PHASE 2: Navigation */
 
 .header-logo {
-
+  float: left;
+  border-right: lightgrey solid 1px;
+  font-weight: 700;
 }
 
 .header-logo:hover {
-
+  background-color: black;
 }
 
 .header-list {
+  float: right;
 
 }
 
 .header-list > li {
-
+  float: left;
+  border-left: lightgrey solid 1px;
 }
 
 .header-list > li:hover {
-
+  background-color: black;
 }
